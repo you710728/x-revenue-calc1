@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X（旧Twitter）収益額推計ツール</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h2>X 収益額推計シミュレーター</h2>
+    <p class="subtitle">過去14日間（2週間）のアナリティクス数値を入力してください</p>
+
+    <div class="form-group">
+      <label>14日間の総インプレッション数</label>
+      <input type="number" id="impressions" placeholder="例: 1000000" min="0">
+    </div>
+
+    <div class="form-group">
+      <label>14日間の総エンゲージメント数</label>
+      <input type="number" id="engagements" placeholder="例: 30000" min="0">
+    </div>
+
+    <div class="form-group">
+      <label>アカウントのジャンル</label>
+      <select id="genre">
+        <option value="business">IT / ビジネス / 副業</option>
+        <option value="creative">イラスト / 漫画 / AI / 動画</option>
+        <option value="entertainment">エンタメ / トレンド / ニュース</option>
+        <option value="general" selected>一般 / 日常 / 雑記</option>
+      </select>
+    </div>
+
+    <button onclick="calculateEarnings()">推計収益を計算する</button>
+
+    <div id="result" class="result-box" style="display: none;">
+      <div class="result-item">
+        <span>次回振り込み推定額 (2週間分):</span>
+        <strong id="result-2weeks">¥0</strong>
+      </div>
+      <div class="result-item">
+        <span>月間推計（目安）:</span>
+        <strong id="result-monthly">¥0</strong>
+      </div>
+      <p class="note">※ Premiumユーザーの閲覧比率やアクション率を加味した試算値です。</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
